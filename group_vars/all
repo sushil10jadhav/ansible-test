@@ -1,0 +1,28 @@
+---
+
+# The domain that nginx listens for
+mattermost_domain: mattermost.tutorialinux.com
+
+mm_ssl_mode: disable
+
+
+db_server: 300.18.25.89
+
+# Postgres Version
+PG_VERSION: "9.3"
+PG_HBA_CONF: /etc/postgresql/{{ PG_VERSION }}/main/pg_hba.conf
+PG_CONF: /etc/postgresql/{{ PG_VERSION }}/main/postgresql.conf
+
+db_user: mmuser
+db_password: admin@123MMdb
+
+
+# mattermost-System
+mattermost_sysuser: "mattermost"
+mattermost_directory: /home/{{ mattermost_sysuser }}/mattermost_app
+
+
+# Mastermost-Web
+LATEST_MM_VERSION: "3.5.0"
+LATEST_MM_DOWNLOADNAME: "mattermost-team-{{ LATEST_MM_VERSION }}-linux-amd64.tar.gz"
+LATEST_MM_URL: https://releases.mattermost.com/{{ LATEST_MM_VERSION }}/{{ LATEST_MM_DOWNLOADNAME }}
